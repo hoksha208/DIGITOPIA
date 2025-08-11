@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق تشفير السجلات الطبية</title>
+
+    <!-- استيراد الخط العربي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- ربط ملف التصميم CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="encryption-container">
+        <div class="header">
+            <div class="icon">🔒</div>
+            <h1>تشفير السجلات الطبية</h1>
+            <p>أداة بسيطة لتوضيح كيفية حماية البيانات الحساسة عن طريق التشفير.</p>
+        </div>
+
+        <div class="main-content">
+            <div class="text-area-container">
+                <label for="input-text">أدخل النص هنا (السجل الطبي )</label>
+                <textarea id="input-text" rows="6" placeholder="مثال: اسم المريض: علي محمد، العمر: 45، يعاني من حساسية البنسلين..."></textarea>
+            </div>
+
+            <div class="controls">
+                <button id="encrypt-btn" class="action-btn encrypt">
+                    <span class="btn-icon">→</span> تشفير
+                </button>
+                <button id="decrypt-btn" class="action-btn decrypt">
+                    فك التشفير <span class="btn-icon">←</span>
+                </button>
+            </div>
+
+            <div class="text-area-container">
+                <label for="output-text">النتيجة</label>
+                <textarea id="output-text" rows="6" readonly placeholder="ستظهر النتيجة المشفرة أو المفكوكة هنا..."></textarea>
+            </div>
+
+            <div class="footer-controls">
+                <button id="copy-btn">نسخ النتيجة</button>
+                <button id="clear-btn">مسح الكل</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ربط ملف المنطق البرمجي JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

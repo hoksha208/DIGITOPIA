@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قارئ QR مع فلتر احتيال</title>
+
+    <!-- استيراد الخط العربي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- ربط ملف التصميم CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scanner-container">
+        <header class="app-header">
+            <h1>قارئ QR الآمن</h1>
+            <p>امسح رمز QR للتحقق من الرابط قبل فتحه</p>
+        </header>
+
+        <main class="app-main">
+            <div class="qr-selection">
+                <h3>اختر رمز QR لمحاكاة مسحه:</h3>
+                <div class="qr-grid">
+                    <div class="qr-code-wrapper" data-url="https://www.google.com">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.google.com" alt="QR Code 1">
+                        <p>رابط آمن (Google )</p>
+                    </div>
+                    <div class="qr-code-wrapper" data-url="http://g00gle.com">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://g00gle.com" alt="QR Code 2">
+                        <p>رابط مشبوه (Typo )</p>
+                    </div>
+                    <div class="qr-code-wrapper" data-url="https://example.com/promo?discount=50">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/promo?discount=50" alt="QR Code 3">
+                        <p>رابط آمن (Example )</p>
+                    </div>
+                     <div class="qr-code-wrapper" data-url="https://totally-safe-bank.com.suspicious.net/login">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://totally-safe-bank.com.suspicious.net/login" alt="QR Code 4">
+                        <p>رابط خطير (Subdomain )</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="scan-result" class="scan-result-container hidden">
+                <h2>نتيجة الفحص</h2>
+                <div id="result-box" class="result-box">
+                    <div id="status-icon" class="status-icon"></div>
+                    <p class="status-text" id="status-text"></p>
+                    <p class="scanned-url" id="scanned-url"></p>
+                    <p class="recommendation" id="recommendation"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- استيراد مكتبة قراءة QR (مهم جداً) -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <!-- ربط ملف المنطق البرمجي JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

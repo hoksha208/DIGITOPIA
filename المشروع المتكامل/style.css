@@ -1,0 +1,111 @@
+/* =============================== */
+/* الأنماط العامة لصفحة المعرض */
+/* =============================== */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f4f7f6; /* لون خلفية فاتح ونظيف */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* =============================== */
+/* تصميم الهيدر والفوتر */
+/* =============================== */
+header {
+    background-color: #2c3e50; /* أزرق داكن */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* =============================== */
+/* حاوية بطاقات المشاريع */
+/* =============================== */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* يجعل البطاقات بنفس الارتفاع */
+    flex-wrap: wrap; /* يسمح للبطاقات بالنزول لسطر جديد في الشاشات الصغيرة */
+    gap: 40px; /* المسافة بين البطاقات */
+    padding: 50px 20px;
+}
+
+/* =============================== */
+/* تصميم بطاقة المشروع */
+/* =============================== */
+.project-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    width: 350px;
+    text-align: center;
+    overflow: hidden; /* لإخفاء أي أجزاء من الصورة تخرج عن الإطار الدائري */
+    display: flex;
+    flex-direction: column; /* لترتيب العناصر داخل البطاقة بشكل عمودي */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* تأثير الرفع عند المرور بالماوس */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* تضمن أن الصورة تملأ المساحة المخصصة لها بشكل جيد */
+}
+
+.project-card h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin: 20px 0 10px;
+}
+
+.project-description {
+    padding: 0 25px;
+    font-size: 1rem;
+    flex-grow: 1; /* هذا هو السر لجعل البطاقات بنفس الارتفاع */
+}
+
+.project-btn {
+    display: inline-block;
+    background-color: #16a085; /* لون أخضر جذاب */
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px 30px;
+    margin: 25px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+    background-color: #117a65; /* لون أغمق عند المرور */
+}
+.project-btn:active {
+    background-color: #0e6655; /* لون أغمق عند الضغط */
+}

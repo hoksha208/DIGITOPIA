@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة كاشف الفيروسات</title>
+
+    <!-- استيراد الخط العربي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- ربط ملف التصميم CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-wrapper">
+        <!-- شاشة البداية -->
+        <div id="start-screen" class="screen">
+            <h1>كاشف الفيروسات</h1>
+            <p>مهمتك: اضغط على الفيروسات التي تظهر على الشاشة بأسرع ما يمكن قبل أن تختفي!</p>
+            <button id="start-game-btn" class="game-btn">ابدأ اللعب</button>
+        </div>
+
+        <!-- شاشة اللعب (مخفية ) -->
+        <div id="game-screen" class="screen hidden">
+            <div class="hud">
+                <h3>النقاط: <span id="score-display">0</span></h3>
+                <h3>الوقت: <span id="time-display">60</span></h3>
+            </div>
+            <div id="game-area">
+                <!-- الفيروسات سيتم إضافتها هنا بواسطة JavaScript -->
+            </div>
+        </div>
+
+        <!-- شاشة النهاية (مخفية) -->
+        <div id="game-over-screen" class="screen hidden">
+            <h1>انتهت اللعبة!</h1>
+            <p>نتيجتك النهائية هي:</p>
+            <h2 id="final-score-display">0</h2>
+            <button id="restart-game-btn" class="game-btn">العب مرة أخرى</button>
+        </div>
+    </div>
+
+    <!-- ربط ملف المنطق البرمجي JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

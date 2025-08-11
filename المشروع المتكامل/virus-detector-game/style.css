@@ -1,0 +1,162 @@
+/* الأنماط العامة للعبة */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.game-wrapper {
+    width: 95%;
+    max-width: 800px;
+    height: 600px;
+    background-color: #162447;
+    border: 3px solid #0f3460;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(27, 22, 168, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.screen.hidden {
+    opacity: 0;
+    transform: scale(1.1);
+    pointer-events: none;
+}
+
+/* تصميم شاشات البداية والنهاية */
+h1 {
+    font-size: 3.5rem;
+    color: #e94560;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #e94560;
+}
+
+p {
+    font-size: 1.3rem;
+    max-width: 80%;
+    line-height: 1.6;
+}
+
+#final-score-display {
+    font-size: 4rem;
+    color: #16c79a;
+    margin: 10px 0;
+    text-shadow: 0 0 10px #16c79a;
+}
+
+.game-btn {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #16c79a;
+    color: #1a1a2e;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+}
+
+.game-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #16c79a;
+}
+
+/* =================================== */
+/* --- التعديلات الجديدة هنا --- */
+/* =================================== */
+
+/* تصميم شريط المعلومات (HUD) */
+.hud {
+    width: 100%;
+    display: flex; /* يستخدم Flexbox لتوزيع العناصر */
+    justify-content: space-between; /* يضع مسافة بين العناصر */
+    padding: 20px 30px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none; /* الحل السحري: يجعل النقرات تمر من خلاله */
+}
+
+.hud h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 0 0 8px #000;
+}
+
+.hud h3:first-child { /* يستهدف عنصر النقاط */
+    text-align: right;
+    color: #16c79a; /* لون أخضر */
+}
+
+.hud h3:last-child { /* يستهدف عنصر الوقت */
+    text-align: left;
+    color: #e94560; /* لون أحمر */
+}
+
+/* =================================== */
+/* --- نهاية التعديلات --- */
+/* =================================== */
+
+#game-area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.virus {
+    width: 60px;
+    height: 60px;
+    background-image: radial-gradient(circle, #ff4757, #e94560, #c0392b);
+    border: 2px solid #ff6b81;
+    border-radius: 50%;
+    position: absolute;
+    cursor: crosshair;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px black;
+    animation: pulse 1s infinite;
+}
+
+.virus:hover {
+    transform: scale(1.2);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px #e94560; }
+    50% { box-shadow: 0 0 15px #ff7979; }
+    100% { box-shadow: 0 0 5px #e94560; }
+}

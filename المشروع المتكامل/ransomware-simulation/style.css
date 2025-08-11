@@ -1,0 +1,160 @@
+/* الأنماط العامة */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+}
+
+.simulation-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative; /* للشاشة الأساسية فقط */
+}
+
+/* تصميم شاشة النظام */
+.system-header {
+    background-color: #005a9e;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+.system-header h1 { margin: 0; font-size: 1.5rem; }
+
+.file-explorer { padding: 20px; }
+.file-explorer h2 { margin-top: 0; }
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.file {
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.file .icon { font-size: 4rem; }
+.file .name { font-weight: bold; word-break: break-all; }
+.file.encrypted .icon { filter: grayscale(1) blur(1px); }
+.file.encrypted .name { color: red; text-decoration: line-through; }
+
+.system-footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+#launch-attack-btn {
+    background-color: #c82333;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#launch-attack-btn:hover { background-color: #a81d2a; }
+
+/* تصميم شاشة الفدية */
+.ransomware-overlay {
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0; /* تبدأ مخفية */
+    pointer-events: none;
+}
+.ransomware-overlay.active { opacity: 1; pointer-events: auto; }
+
+.ransomware-note {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border: 3px solid #ff0000;
+    border-radius: 5px;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+.skull-icon { font-size: 4rem; }
+.ransomware-note h1 { color: #ff0000; margin: 10px 0; }
+.ransomware-note h2 { color: #ffc107; }
+.wallet-address {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    word-wrap: break-word;
+    margin: 15px 0;
+}
+.timer { color: #ff0000; font-weight: bold; }
+#show-response-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* تصميم شاشة الاستجابة */
+.response-overlay {
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+}
+.response-overlay.active { opacity: 1; pointer-events: auto; }
+
+.response-steps {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 700px;
+}
+.response-steps h2 { margin-top: 0; color: #005a9e; }
+.response-steps ol { padding-right: 20px; }
+.response-steps li { margin-bottom: 15px; line-height: 1.6; }
+#reset-simulation-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}

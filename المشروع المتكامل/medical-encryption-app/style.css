@@ -1,0 +1,152 @@
+/* الأنماط العامة */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #eef2f3;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.encryption-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    overflow: hidden;
+}
+
+/* تصميم الهيدر */
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.header .icon {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.header h1 {
+    margin: 10px 0;
+    font-size: 2rem;
+}
+
+.header p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* تصميم المحتوى الرئيسي */
+.main-content {
+    padding: 30px;
+}
+
+.text-area-container {
+    margin-bottom: 20px;
+}
+
+.text-area-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    resize: vertical; /* السماح بتغيير الارتفاع فقط */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+textarea[readonly] {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+/* تصميم أزرار التحكم الرئيسية */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 30px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+}
+
+.action-btn .btn-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.action-btn.encrypt {
+    background-color: #dc3545; /* أحمر */
+    color: white;
+}
+.action-btn.encrypt .btn-icon { margin-left: 10px; }
+
+.action-btn.decrypt {
+    background-color: #28a745; /* أخضر */
+    color: white;
+}
+.action-btn.decrypt .btn-icon { margin-right: 10px; }
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* تصميم أزرار التحكم السفلية */
+.footer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.footer-controls button {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.footer-controls button:hover {
+    background-color: #5a6268;
+}

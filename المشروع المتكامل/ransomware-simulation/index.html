@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محاكاة هجوم الفدية</title>
+
+    <!-- استيراد الخط العربي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- ربط ملف التصميم CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="simulation-wrapper">
+        <!-- شاشة نظام المستشفى (الحالة الطبيعية ) -->
+        <div id="system-screen" class="screen active">
+            <header class="system-header">
+                <h1>نظام إدارة سجلات المرضى - مستشفى الشفاء</h1>
+            </header>
+            <main class="file-explorer">
+                <h2>ملفات المرضى</h2>
+                <div class="file-grid">
+                    <!-- سيتم إنشاء الملفات هنا بواسطة JavaScript -->
+                </div>
+            </main>
+            <footer class="system-footer">
+                <button id="launch-attack-btn">تشغيل محاكاة الهجوم</button>
+            </footer>
+        </div>
+
+        <!-- شاشة رسالة الفدية (تظهر فوق الشاشة الأخرى) -->
+        <div id="ransomware-screen" class="screen ransomware-overlay">
+            <div class="ransomware-note">
+                <div class="skull-icon">☠️</div>
+                <h1>!Oops, Your Files Have Been Encrypted</h1>
+                <h2>!لقد تم تشفير جميع ملفاتك المهمة</h2>
+                <p>
+                    لا تقلق، يمكنك استعادة جميع ملفاتك! لكنك تحتاج إلى مفتاح فك التشفير الخاص بنا.
+                    للحصول على المفتاح، يجب عليك دفع فدية قدرها 0.5 بيتكوين إلى العنوان التالي:
+                </p>
+                <div class="wallet-address">1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2</div>
+                <p>
+                    لديك <span class="timer" id="countdown-timer">48:00:00</span> ساعة للدفع.
+                    بعد هذا الوقت، سيتم حذف جميع ملفاتك نهائياً.
+                </p>
+                <div class="action-buttons">
+                    <button id="show-response-btn">ماذا أفعل الآن؟ (خطوات الاستجابة الصحيحة)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- شاشة خطوات الاستجابة (تظهر فوق كل شيء) -->
+        <div id="response-screen" class="screen response-overlay">
+            <div class="response-steps">
+                <h2>خطوات الاستجابة الصحيحة لهجوم فدية</h2>
+                <ol>
+                    <li><strong>العزل الفوري:</strong> افصل الجهاز المصاب عن الشبكة فوراً (افصل كابل الإنترنت أو أوقف الواي فاي) لمنع انتشار الهجوم.</li>
+                    <li><strong>لا تدفع الفدية:</strong> الدفع لا يضمن استعادة ملفاتك ويشجع المهاجمين على تكرار هجماتهم.</li>
+                    <li><strong>إبلاغ الجهات المختصة:</strong> تواصل مع قسم تكنولوجيا المعلومات في مؤسستك أو الجهات الأمنية المتخصصة في الجرائم الإلكترونية.</li>
+                    <li><strong>تحديد نوع الهجوم:</strong> حاول تحديد نوع برنامج الفدية (باستخدام أدوات مثل ID Ransomware) للعثور على أدوات فك تشفير متاحة مجاناً.</li>
+                    <li><strong>الاستعادة من النسخ الاحتياطي:</strong> أفضل وأضمن طريقة هي مسح النظام بالكامل واستعادة الملفات من نسخة احتياطية حديثة ونظيفة.</li>
+                </ol>
+                <button id="reset-simulation-btn">إعادة تشغيل المحاكاة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ربط ملف المنطق البرمجي JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
